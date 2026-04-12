@@ -826,28 +826,7 @@ certificatesData.forEach(cert => {
 });
 
   // Contact & misc
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-  emailjs.init("_n65NeCRTdiW4m1jv");
-})();
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  emailjs.sendForm("service_aw0fmbe", "template_7sn3oio", this)
-    .then(function() {
-      alert("✅ Message sent successfully!");
-    }, function(error) {
-      alert("❌ Failed to send message");
-      console.log(error);
-    });
-
-  this.reset();
-});
-  const menuToggle = document.getElementById('menuToggle'), navLinksEl = document.getElementById('navLinks');
-  menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('active'));
+  document.getElementById('contactForm').addEventListener('submit', (e) => { e.preventDefault(); alert(✨ Thank you! Ganesh will reach out soon.); e.target.reset(); });
   document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinksEl.classList.remove('active')));
   const fadeElements = document.querySelectorAll('.fade-up');
   new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold:0.1 }).observe(document.querySelector('.fade-up'));
