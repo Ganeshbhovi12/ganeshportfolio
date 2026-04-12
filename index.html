@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Ganesh K | Photographer & Videographer — Cinematic Portfolio</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -29,15 +32,20 @@
     ::-webkit-scrollbar {
       width: 6px;
     }
+
     ::-webkit-scrollbar-track {
       background: #f1f1f1;
     }
+
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(135deg, #833AB4, #FD1D1D);
       border-radius: 10px;
     }
 
-    h1, h2, h3, .logo {
+    h1,
+    h2,
+    h3,
+    .logo {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
     }
@@ -52,10 +60,12 @@
       -webkit-background-clip: text;
       color: transparent;
     }
+
     .section-title-center {
       text-align: center;
       margin-bottom: 3rem;
     }
+
     .section-title-center h2:after {
       content: '';
       display: block;
@@ -65,26 +75,29 @@
       margin: 12px auto 0;
       border-radius: 4px;
     }
-.cert-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
 
-.cert-card img {
-  transition: 0.3s;
-}
+    .cert-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
 
-.cert-card:hover img {
-  transform: scale(1.08);
-}
+    .cert-card img {
+      transition: 0.3s;
+    }
+
+    .cert-card:hover img {
+      transform: scale(1.08);
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 30px;
     }
+
     section {
       padding: 100px 0;
     }
@@ -99,13 +112,14 @@
       text-decoration: none;
       border-radius: 40px;
       transition: transform 0.3s ease, box-shadow 0.3s;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       font-family: 'Poppins', sans-serif;
       cursor: pointer;
     }
+
     .gradient-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(131,58,180,0.35);
+      box-shadow: 0 12px 25px rgba(131, 58, 180, 0.35);
     }
 
     /* Navigation */
@@ -114,12 +128,13 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(250,250,250,0.96);
+      background: rgba(250, 250, 250, 0.96);
       backdrop-filter: blur(12px);
       z-index: 1000;
       padding: 18px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
+
     .nav-container {
       display: flex;
       justify-content: space-between;
@@ -128,6 +143,7 @@
       margin: 0 auto;
       padding: 0 30px;
     }
+
     .logo {
       font-size: 1.9rem;
       font-weight: 700;
@@ -136,23 +152,27 @@
       -webkit-background-clip: text;
       color: transparent;
     }
+
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
+
     .nav-links a {
       text-decoration: none;
       color: #121212;
       font-weight: 500;
       transition: 0.3s;
     }
+
     .nav-links a:hover {
       background: linear-gradient(135deg, #833AB4, #FD1D1D);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
+
     .menu-icon {
       display: none;
       font-size: 1.8rem;
@@ -166,27 +186,31 @@
       align-items: center;
       padding-top: 90px;
     }
+
     .hero-container {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
       gap: 40px;
     }
+
     .hero-left {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .hero-left img {
       width: 100%;
       max-width: 420px;
       aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 28px;
-      box-shadow: 0 30px 40px -15px rgba(0,0,0,0.25);
+      box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.25);
       transition: transform 0.4s;
     }
+
     .hero-right {
       flex: 1;
       display: flex;
@@ -194,10 +218,12 @@
       justify-content: center;
       animation: slideInRight 0.9s ease;
     }
+
     .hero-right h1 {
       font-size: 3.4rem;
       margin-bottom: 0.5rem;
     }
+
     .hero-tag {
       font-size: 1.4rem;
       font-weight: 500;
@@ -207,15 +233,24 @@
       color: transparent;
       margin-bottom: 1.2rem;
     }
+
     .hero-desc {
       font-size: 1.1rem;
       margin-bottom: 2rem;
       color: #2c2c2c;
       max-width: 90%;
     }
+
     @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(50px);}
-      to { opacity: 1; transform: translateX(0);}
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     /* Portfolio Category Grid */
@@ -224,43 +259,65 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
+
     .category-card {
       position: relative;
       overflow: hidden;
       border-radius: 24px;
       cursor: pointer;
       background: #fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s;
     }
-    .category-card:hover { transform: translateY(-6px); }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+    }
+
     .category-card img {
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .category-card:hover img { transform: scale(1.06); }
+
+    .category-card:hover img {
+      transform: scale(1.06);
+    }
+
     .category-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
       padding: 20px;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
     }
-    .category-name { font-size: 1.3rem; font-weight: 600; font-family: 'Playfair Display', serif; }
-    .photo-count { background: rgba(255,255,255,0.2); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 30px; font-size: 0.8rem; }
+
+    .category-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .photo-count {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
     .view-more {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.7);
       color: white;
       padding: 8px 20px;
       border-radius: 40px;
@@ -270,38 +327,51 @@
       pointer-events: none;
       white-space: nowrap;
     }
-    .category-card:hover .view-more { opacity: 1; }
+
+    .category-card:hover .view-more {
+      opacity: 1;
+    }
 
     /* Video Section (Cinematic) */
     .video-section {
       background: #0a0a0a;
       position: relative;
     }
+
     .video-section .section-title-center h2 {
       background: linear-gradient(135deg, #FFFFFF, #FCAF45);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
+
     .video-section .section-title-center h2:after {
       background: linear-gradient(90deg, #833AB4, #FD1D1D, #FCAF45);
     }
+
     .featured-video-wrapper {
       max-width: 1000px;
       margin: 0 auto;
       border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.5);
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s;
     }
-    .featured-video-wrapper:hover { transform: scale(1.01); }
+
+    .featured-video-wrapper:hover {
+      transform: scale(1.01);
+    }
+
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
+      /* 16:9 */
       background: #000;
     }
-    .video-container iframe, .video-container video {
+
+    .video-container iframe,
+    .video-container video {
       position: absolute;
       top: 0;
       left: 0;
@@ -309,17 +379,24 @@
       height: 100%;
       border: 0;
     }
+
     .video-caption {
       text-align: center;
       margin-top: 20px;
       color: #ddd;
     }
+
     .video-caption h3 {
       font-size: 1.6rem;
       font-family: 'Playfair Display', serif;
       color: white;
     }
-    .video-caption p { color: #aaa; margin-top: 6px; }
+
+    .video-caption p {
+      color: #aaa;
+      margin-top: 6px;
+    }
+
     .more-videos-btn {
       text-align: center;
       margin-top: 40px;
@@ -333,20 +410,31 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0, 0, 0, 0.95);
       z-index: 2000;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       animation: fadeInModal 0.3s ease;
     }
-    @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+
+    @keyframes fadeInModal {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
     .video-modal-content {
       width: 90%;
       max-width: 1200px;
       background: transparent;
       position: relative;
     }
+
     .video-gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -354,9 +442,10 @@
       max-height: 80vh;
       overflow-y: auto;
       padding: 20px;
-      background: rgba(20,20,20,0.9);
+      background: rgba(20, 20, 20, 0.9);
       border-radius: 32px;
     }
+
     .video-gallery-item {
       cursor: pointer;
       border-radius: 20px;
@@ -364,19 +453,25 @@
       background: #111;
       transition: transform 0.2s;
     }
-    .video-gallery-item:hover { transform: scale(1.03); }
+
+    .video-gallery-item:hover {
+      transform: scale(1.03);
+    }
+
     .video-thumb {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
       background: #000;
     }
+
     .video-thumb img {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     .play-icon-overlay {
       position: absolute;
       top: 50%;
@@ -384,17 +479,31 @@
       transform: translate(-50%, -50%);
       font-size: 48px;
       color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       opacity: 0.9;
       transition: 0.2s;
     }
-    .video-gallery-item:hover .play-icon-overlay { transform: translate(-50%, -50%) scale(1.1); color: #FCAF45; }
+
+    .video-gallery-item:hover .play-icon-overlay {
+      transform: translate(-50%, -50%) scale(1.1);
+      color: #FCAF45;
+    }
+
     .video-info {
       padding: 12px;
       color: white;
     }
-    .video-info h4 { font-size: 1rem; margin-bottom: 5px; }
-    .video-duration { font-size: 0.75rem; color: #bbb; }
+
+    .video-info h4 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .video-duration {
+      font-size: 0.75rem;
+      color: #bbb;
+    }
+
     .close-video-modal {
       position: absolute;
       top: -40px;
@@ -405,6 +514,7 @@
       background: none;
       border: none;
     }
+
     .modal-title-video {
       color: white;
       font-family: 'Playfair Display', serif;
@@ -421,23 +531,27 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0, 0, 0, 0.95);
       z-index: 2100;
       justify-content: center;
       align-items: center;
       flex-direction: column;
     }
+
     .video-lightbox-content {
       width: 85%;
       max-width: 1000px;
       position: relative;
     }
-    .video-lightbox-content iframe, .video-lightbox-content video {
+
+    .video-lightbox-content iframe,
+    .video-lightbox-content video {
       width: 100%;
       aspect-ratio: 16/9;
       border-radius: 20px;
       border: none;
     }
+
     .close-lightbox {
       position: absolute;
       top: -50px;
@@ -446,22 +560,28 @@
       color: white;
       cursor: pointer;
     }
-    .projects-grid, .cert-grid {
+
+    .projects-grid,
+    .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
-    .project-card, .cert-card {
+
+    .project-card,
+    .cert-card {
       background: white;
       border-radius: 24px;
       padding: 30px;
       transition: all 0.3s;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.05);
     }
-    .project-card:hover, .cert-card:hover {
+
+    .project-card:hover,
+    .cert-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 35px -8px rgba(131,58,180,0.15);
+      box-shadow: 0 20px 35px -8px rgba(131, 58, 180, 0.15);
     }
 
     /* Contact */
@@ -470,7 +590,12 @@
       flex-wrap: wrap;
       gap: 50px;
     }
-    .contact-info, .contact-form { flex: 1; }
+
+    .contact-info,
+    .contact-form {
+      flex: 1;
+    }
+
     .contact-info i {
       background: linear-gradient(135deg, #833AB4, #FD1D1D);
       background-clip: text;
@@ -478,7 +603,9 @@
       color: transparent;
       margin-right: 12px;
     }
-    input, textarea {
+
+    input,
+    textarea {
       width: 100%;
       padding: 14px 18px;
       margin-bottom: 20px;
@@ -487,7 +614,11 @@
       font-family: 'Poppins', sans-serif;
       background: white;
     }
-    textarea { border-radius: 28px; }
+
+    textarea {
+      border-radius: 28px;
+    }
+
     .social-icons a {
       display: inline-flex;
       width: 46px;
@@ -501,28 +632,46 @@
       align-items: center;
       justify-content: center;
     }
+
     .social-icons a:hover {
       background: linear-gradient(135deg, #833AB4, #FD1D1D);
       color: white;
       transform: translateY(-5px);
     }
+
     footer {
       background: #121212;
       color: #bbb;
       text-align: center;
       padding: 40px;
     }
+
     .fade-up {
       opacity: 0;
       transform: translateY(35px);
       transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s ease;
     }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     @media (max-width: 950px) {
-      .hero-container { flex-direction: column; text-align: center; }
-      .hero-right { align-items: center; text-align: center; }
-      .hero-desc { max-width: 100%; }
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-right {
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-desc {
+        max-width: 100%;
+      }
+
       .nav-links {
         display: none;
         flex-direction: column;
@@ -533,161 +682,198 @@
         width: 100%;
         padding: 20px;
       }
-      .nav-links.active { display: flex; }
-      .menu-icon { display: block; }
-      h2 { font-size: 2rem; }
-      section { padding: 60px 0; }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 60px 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-container">
-    <div class="logo">Ganesh<span style="color:#121212">K</span></div>
-    <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#video">Visual Stories</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section id="home" class="hero-split">
-  <div class="container hero-container">
-    <div class="hero-left"><img src="images/profile.jpg" id="profileImg"></div>
-    <div class="hero-right">
-      <h1>Hi, I'm Ganesh K</h1>
-      <div class="hero-tag">Photographer & Videographer</div>
-      <p class="hero-desc">"I capture emotions, stories, and moments through creative visuals."</p>
-      <a href="#portfolio" class="gradient-btn">View Portfolio <i class="fas fa-arrow-right"></i></a>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Ganesh<span style="color:#121212">K</span></div>
+      <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#video">Visual Stories</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- About -->
-<section id="about" class="fade-up">
-  <div class="container">
-    <div class="section-title-center"><h2>About Me</h2></div>
-    <div style="max-width:800px; margin:0 auto; text-align:center;">
-      <p style="font-size:1.1rem; margin-bottom:24px;">I’m Ganesh K — a photographer and videographer creating cinematic visuals that tell real stories.</p>
+  <!-- Hero -->
+  <section id="home" class="hero-split">
+    <div class="container hero-container">
+      <div class="hero-left"><img src="images/profile.jpg" id="profileImg"></div>
+      <div class="hero-right">
+        <h1>Hi, I'm Ganesh K</h1>
+        <div class="hero-tag">Photographer & Videographer</div>
+        <p class="hero-desc">"I capture emotions, stories, and moments through creative visuals."</p>
+        <a href="#portfolio" class="gradient-btn">View Portfolio <i class="fas fa-arrow-right"></i></a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Portfolio Categories -->
-<section id="portfolio" style="background:#fff;" class="fade-up">
-  <div class="container">
-    <div class="section-title-center"><h2>Portfolio</h2><p style="margin-top:8px;">Explore my work by category</p></div>
-    <div class="category-grid" id="categoryGrid"></div>
-  </div>
-</section>
+  <!-- About -->
+  <section id="about" class="fade-up">
+    <div class="container">
+      <div class="section-title-center">
+        <h2>About Me</h2>
+      </div>
+      <div style="max-width:800px; margin:0 auto; text-align:center;">
+        <p style="font-size:1.1rem; margin-bottom:24px;">I’m Ganesh K — a photographer and videographer creating
+          cinematic visuals that tell real stories.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- VIDEO SECTION: Cinematic Work (below portfolio) -->
-<section id="video" class="video-section fade-up">
-  <div class="container">
-    <div class="section-title-center"><h2>Visual Stories</h2><p style="color:#ccc;">Cinematic work that moves</p></div>
-    <div class="featured-video-wrapper">
-      <div class="video-container" id="featuredVideoContainer">
-  <video id="featuredVideo" controls autoplay muted loop style="width:100%; height:100%; object-fit:cover;">
-    <source src="images/cover.mp4" type="video/mp4">
-  </video>
-</div>
-</video>
+  <!-- Portfolio Categories -->
+  <section id="portfolio" style="background:#fff;" class="fade-up">
+    <div class="container">
+      <div class="section-title-center">
+        <h2>Portfolio</h2>
+        <p style="margin-top:8px;">Explore my work by category</p>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- VIDEO SECTION: Cinematic Work (below portfolio) -->
+  <section id="video" class="video-section fade-up">
+    <div class="container">
+      <div class="section-title-center">
+        <h2>Visual Stories</h2>
+        <p style="color:#ccc;">Cinematic work that moves</p>
+      </div>
+      <div class="featured-video-wrapper">
+        <div class="video-container" id="featuredVideoContainer">
+          <video id="featuredVideo" controls autoplay muted loop style="width:100%; height:100%; object-fit:cover;">
+            <source src="images/cover.mp4" type="video/mp4">
+          </video>
+        </div>
+        </video>
       </div>
     </div>
     <div class="more-videos-btn">
       <button class="gradient-btn" id="viewMoreVideosBtn"><i class="fas fa-film"></i> View More Videos</button>
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- Projects -->
-<section id="projects" class="fade-up">
-  <div class="container"><div class="section-title-center"><h2>Featured Projects</h2></div><div class="projects-grid" id="projectsContainer"></div></div>
-</section>
+  <!-- Projects -->
+  <section id="projects" class="fade-up">
+    <div class="container">
+      <div class="section-title-center">
+        <h2>Featured Projects</h2>
+      </div>
+      <div class="projects-grid" id="projectsContainer"></div>
+    </div>
+  </section>
 
-<!-- Certificates -->
-<section id="certificates" style="background:#fff;" class="fade-up">
-  <div class="container"><div class="section-title-center"><h2>Certificates & Achievements</h2></div><div class="cert-grid" id="certContainer"></div></div>
-</section>
+  <!-- Certificates -->
+  <section id="certificates" style="background:#fff;" class="fade-up">
+    <div class="container">
+      <div class="section-title-center">
+        <h2>Certificates & Achievements</h2>
+      </div>
+      <div class="cert-grid" id="certContainer"></div>
+    </div>
+  </section>
 
-<!-- Contact -->
-<section id="contact" class="fade-up">
-  <div class="container"><div class="section-title-center"><h2>Let's Create Something Amazing</h2></div>
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <p><i class="fas fa-phone-alt"></i> +91 9113692112</p>
-        <p><i class="fas fa-envelope"></i> ganeshbhovi2312@gmail.com</p>
-        <div class="social-icons">
-          <a href="https://instagram.com/ganii___ganesh" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@Mrchayagrahaka" target="_blank"><i class="fab fa-youtube"></i></a>
+  <!-- Contact -->
+  <section id="contact" class="fade-up">
+    <div class="container">
+      <div class="section-title-center">
+        <h2>Let's Create Something Amazing</h2>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p><i class="fas fa-phone-alt"></i> +91 9113692112</p>
+          <p><i class="fas fa-envelope"></i> ganeshbhovi2312@gmail.com</p>
+          <div class="social-icons">
+            <a href="https://instagram.com/ganii___ganesh" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@Mrchayagrahaka" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" placeholder="Your Name" required id="nameField">
+            <input type="email" placeholder="Email Address" required id="emailField">
+            <textarea rows="4" placeholder="Your Message" required id="messageField"></textarea>
+            <button type="submit" class="gradient-btn" style="border:none;">Send Message</button>
+          </form>
         </div>
       </div>
-      <div class="contact-form">
-        <form id="contactForm">
-          <input type="text" placeholder="Your Name" required id="nameField">
-          <input type="email" placeholder="Email Address" required id="emailField">
-          <textarea rows="4" placeholder="Your Message" required id="messageField"></textarea>
-          <button type="submit" class="gradient-btn" style="border:none;">Send Message</button>
-        </form>
-      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© Ganesh K — Photography & Videography. All rights reserved.</p>
+  </footer>
+
+  <!-- Video Gallery Modal -->
+  <div id="videoGalleryModal" class="video-modal">
+    <div class="video-modal-content">
+      <button class="close-video-modal" id="closeVideoModalBtn">&times;</button>
+      <div class="modal-title-video">All Cinematic Works</div>
+      <div class="video-gallery-grid" id="videoGalleryGrid"></div>
     </div>
   </div>
-</section>
 
-<footer><p>© Ganesh K — Photography & Videography. All rights reserved.</p></footer>
-
-<!-- Video Gallery Modal -->
-<div id="videoGalleryModal" class="video-modal">
-  <div class="video-modal-content">
-    <button class="close-video-modal" id="closeVideoModalBtn">&times;</button>
-    <div class="modal-title-video">All Cinematic Works</div>
-    <div class="video-gallery-grid" id="videoGalleryGrid"></div>
+  <!-- Lightbox for playing video -->
+  <div id="videoLightbox" class="video-lightbox">
+    <div class="video-lightbox-content">
+      <button class="close-lightbox" id="closeLightboxBtn">&times;</button>
+      <div id="lightboxPlayer"></div>
+    </div>
   </div>
-</div>
 
-<!-- Lightbox for playing video -->
-<div id="videoLightbox" class="video-lightbox">
-  <div class="video-lightbox-content">
-    <button class="close-lightbox" id="closeLightboxBtn">&times;</button>
-    <div id="lightboxPlayer"></div>
-  </div>
-</div>
+  <script>
+    // ---------- VIDEO DATA (featured + gallery) ----------
+    const videosData = [
+      { id: 1, url: "https://drive.google.com/file/d/1nZRc7uXnlQzyhV96Hj-b1y612b8TFdYD/preview", isFeatured: true },
+      { id: 2, url: "https://drive.google.com/file/d/1oYEPvbGU40OaTLqHFySZOeDFOpEAzo58/preview", isFeatured: false },
+      { id: 3, url: "https://drive.google.com/file/d/13OkplxXe7XzOOH1iYyPhDzyg5bES6kQm/preview", isFeatured: false },
+      { id: 4, url: "https://drive.google.com/file/d/1zJjb061G8P9-cqVt7tF_tWBjQeJGw8OV/preview", isFeatured: false },
+      { id: 5, url: "https://drive.google.com/file/d/1KOkXuZtIZ7pVmnnohvj-f8nRduEsF10s/preview", isFeatured: false },
+      { id: 5, url: "https://drive.google.com/file/d/1sq8DBpFd_XV_-3u_aqVJd-FynX0O65_O/preview", isFeatured: false },
+      { id: 5, url: "https://drive.google.com/file/d/1nnwjPoOJa4Gytw7pmOy1jp0U9yQtmwqj/preview", isFeatured: false },
+      { id: 5, url: "https://drive.google.com/file/d/1onZSITWfhhLDrvk4Ws5L2ePMM_A0ubOm/preview", isFeatured: false }
+    ];
 
-<script>
- // ---------- VIDEO DATA (featured + gallery) ----------
-const videosData = [
-  { id: 1, url: "https://drive.google.com/file/d/1nZRc7uXnlQzyhV96Hj-b1y612b8TFdYD/preview", isFeatured: true },
-  { id: 2, url: "https://drive.google.com/file/d/1oYEPvbGU40OaTLqHFySZOeDFOpEAzo58/preview", isFeatured: false },
-  { id: 3, url: "https://drive.google.com/file/d/13OkplxXe7XzOOH1iYyPhDzyg5bES6kQm/preview", isFeatured: false },
-  { id: 4, url: "https://drive.google.com/file/d/1zJjb061G8P9-cqVt7tF_tWBjQeJGw8OV/preview", isFeatured: false },
-  { id: 5, url: "https://drive.google.com/file/d/1KOkXuZtIZ7pVmnnohvj-f8nRduEsF10s/preview", isFeatured: false },
-  { id: 5, url: "https://drive.google.com/file/d/1sq8DBpFd_XV_-3u_aqVJd-FynX0O65_O/preview", isFeatured: false },
-  { id: 5, url: "https://drive.google.com/file/d/1nnwjPoOJa4Gytw7pmOy1jp0U9yQtmwqj/preview", isFeatured: false },
-  { id: 5, url: "https://drive.google.com/file/d/1onZSITWfhhLDrvk4Ws5L2ePMM_A0ubOm/preview", isFeatured: false }
-];
+    const featuredVideo = videosData.find(v => v.isFeatured === true) || videosData[0];
+    const otherVideos = videosData.filter(v => v.id !== featuredVideo.id);
 
-const featuredVideo = videosData.find(v => v.isFeatured === true) || videosData[0];
-const otherVideos = videosData.filter(v => v.id !== featuredVideo.id);
+    // Render gallery modal content
+    const videoGalleryGrid = document.getElementById('videoGalleryGrid');
 
-// Render gallery modal content
-const videoGalleryGrid = document.getElementById('videoGalleryGrid');
+    function renderVideoGallery() {
+      videoGalleryGrid.innerHTML = '';
 
-function renderVideoGallery() {
-  videoGalleryGrid.innerHTML = '';
+      otherVideos.forEach(video => {
+        const item = document.createElement('div');
+        item.className = 'video-gallery-item';
 
-  otherVideos.forEach(video => {
-    const item = document.createElement('div');
-    item.className = 'video-gallery-item';
-
-    item.innerHTML = `
+        item.innerHTML = `
       <div class="video-thumb">
         <iframe 
   src="${video.url}" 
@@ -697,141 +883,144 @@ function renderVideoGallery() {
       </div>
     `;
 
-    item.addEventListener('click', () => openVideoLightbox(video.url));
-    videoGalleryGrid.appendChild(item);
-  });
-}
-renderVideoGallery();
+        item.addEventListener('click', () => openVideoLightbox(video.url));
+        videoGalleryGrid.appendChild(item);
+      });
+    }
+    renderVideoGallery();
 
-// Modal controls
-const videoModal = document.getElementById('videoGalleryModal');
-const viewMoreBtn = document.getElementById('viewMoreVideosBtn');
-const closeVideoModalBtn = document.getElementById('closeVideoModalBtn');
+    // Modal controls
+    const videoModal = document.getElementById('videoGalleryModal');
+    const viewMoreBtn = document.getElementById('viewMoreVideosBtn');
+    const closeVideoModalBtn = document.getElementById('closeVideoModalBtn');
 
-viewMoreBtn.addEventListener('click', () => {
-  videoModal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-});
+    viewMoreBtn.addEventListener('click', () => {
+      videoModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
 
-closeVideoModalBtn.addEventListener('click', () => {
-  videoModal.style.display = 'none';
-  document.body.style.overflow = '';
-});
+    closeVideoModalBtn.addEventListener('click', () => {
+      videoModal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
 
-videoModal.addEventListener('click', (e) => {
-  if (e.target === videoModal) {
-    videoModal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-});
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        videoModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
 
-// Video Lightbox
-const videoLightbox = document.getElementById('videoLightbox');
-const lightboxPlayer = document.getElementById('lightboxPlayer');
-const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+    // Video Lightbox
+    const videoLightbox = document.getElementById('videoLightbox');
+    const lightboxPlayer = document.getElementById('lightboxPlayer');
+    const closeLightboxBtn = document.getElementById('closeLightboxBtn');
 
-function openVideoLightbox(videoUrl) {
-  lightboxPlayer.innerHTML = `
+    function openVideoLightbox(videoUrl) {
+      lightboxPlayer.innerHTML = `
     <iframe 
   src="${videoUrl}" 
   style="width:100%; aspect-ratio:16/9; border-radius:20px;" 
   allow="autoplay">
 </iframe>
   `;
-  videoLightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
+      videoLightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
 
-closeLightboxBtn.addEventListener('click', () => {
-  videoLightbox.style.display = 'none';
-  lightboxPlayer.innerHTML = '';
-  document.body.style.overflow = '';
-});
-
-videoLightbox.addEventListener('click', (e) => {
-  if (e.target === videoLightbox) {
-    videoLightbox.style.display = 'none';
-    lightboxPlayer.innerHTML = '';
-    document.body.style.overflow = '';
-  }
-});
-
-  // Portfolio Categories (photo galleries - same as previous)
-  const categoriesData = {
-    "Portraits": { cover: "images/p1.jpg", images: ["images/p2.jpg","images/p3.jpg","images/p4.jpg","images/p5.jpg","images/p6.jpg","images/p7.jpg","images/p8.jpg","images/p11.jpg","images/p12.jpg","images/p13.jpg","images/p14.jpg","images/p15.jpg","images/p16.jpg","images/p18.jpg","images/p19.jpg","images/p20.jpg","images/p22.jpg","images/p23.jpg","images/p24.jpg","images/p25.jpg","images/p26.jpg","images/p27.jpg","images/p28.jpg","images/p29.jpg","images/p30.jpg","images/p31.jpg","images/p32.jpg","images/p33.jpg","images/p34.jpg","images/p35.jpg","images/p36.jpg","images/p37.jpg","images/p38.jpg","images/p39.jpg","images/p40.jpg","images/p41.jpg","images/p42.jpg","images/p43.jpg"], count:10 },
-    "Events": { cover: "images/e1.jpg", images: ["images/e2.jpg","images/e3.jpg","images/e4.jpg","images/e5.jpg","images/e6.jpg","images/e7.jpg","images/e8.jpg","images/e9.jpg","images/e13.jpg","images/e14.jpg","images/e15.jpg","images/e17.jpg","images/e18.jpg","images/e19.jpg","images/e20.jpg","images/e22.jpg","images/e23.jpg","images/e24.jpg","images/e26.jpg","images/e27.jpg","images/e28.jpg","images/e29.jpg","images/e30.jpg"], count:4 },
-    "Weddings": { cover: "images/w1.jpg", images: ["images/w2.jpg","images/w3.jpg","images/w4.jpg","images/w5.jpg","images/w6.jpg","images/w7.jpg","images/w8.jpg","images/w9.jpg","images/w10.jpg"], count:4 },
-    "Baby shoot": { cover: "images/o1.jpg", images: ["images/o2.jpg","images/o30.jpg","images/o3.jpg","images/o5.jpg","images/o6.jpg","images/o7.jpg","images/o8.jpg","images/o9.jpg","images/o10.jpg","images/o11.jpg","images/o13.jpg","images/o15.jpg","images/o17.jpg","images/o18.jpg","images/o20.jpg","images/o21.jpg","images/o22.jpg","images/o23.jpg","images/o24.jpg","images/o25.jpg","images/o26.jpg","images/o27.jpg","images/o28.jpg","images/o29.jpg"], count:4 }
-  };
-  const categoryGrid = document.getElementById('categoryGrid');
-  for (const [catName, catData] of Object.entries(categoriesData)) {
-    const card = document.createElement('div'); card.className = 'category-card';
-    card.innerHTML = `<img src="${catData.cover}" alt="${catName}"><div class="category-overlay"><span class="category-name">${catName}</span><span class="photo-count">${catData.count} Photos</span></div><div class="view-more">View Gallery →</div>`;
-    card.addEventListener('click', () => {
-      let galleryHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;">';
-      catData.images.forEach(img => { galleryHtml += `<img src="${img}" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;cursor:pointer;" onclick="window.open('${img}','_blank')">`; });
-      galleryHtml += '</div>';
-      const modalDiv = document.createElement('div'); modalDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:3000;display:flex;align-items:center;justify-content:center;';
-      modalDiv.innerHTML = `<div style="background:#111;padding:20px;border-radius:28px;max-width:90%;max-height:90%;overflow:auto;"><div style="display:flex;justify-content:flex-end;"><button style="background:none;border:none;color:white;font-size:28px;cursor:pointer;">&times;</button></div>${galleryHtml}</div>`;
-      document.body.appendChild(modalDiv); modalDiv.style.display = 'flex'; document.body.style.overflow = 'hidden';
-      modalDiv.querySelector('button').onclick = () => { modalDiv.remove(); document.body.style.overflow = ''; };
-      modalDiv.addEventListener('click', (e) => { if(e.target === modalDiv) { modalDiv.remove(); document.body.style.overflow = ''; } });
+    closeLightboxBtn.addEventListener('click', () => {
+      videoLightbox.style.display = 'none';
+      lightboxPlayer.innerHTML = '';
+      document.body.style.overflow = '';
     });
-    categoryGrid.appendChild(card);
-  }
 
-  // Projects & Certificates
-  const projectsArray = [
-  { title:"INKLAYER", desc:"Fashion photography and brand shoot" },
-  { title:"Anjaneya School", desc:"Cinematic school promotion video shoot" },
-  { title:"Code Craft Academy", desc:"Creative promotional" }
-];
-  projectsArray.forEach(p => { const card = document.createElement('div'); card.className = 'project-card'; card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p>`; projectsContainer.appendChild(card); });
-  const certificatesData = [
-  { 
-    image: "images/crtificate1.jpg",
-    title: "35 Awards International Photography Award",
-    year: "2025"
-  },
-  { 
-    image: "images/crtificate2.jpg",
-    title: "Global Photography Contest (INNOVIZE)",
-    year: "2025"
-  },
-  { 
-    image: "images/crtificate3.jpg",
-    title: "Snap India Photography Contest",
-    year: "2023"
-  }
-];
+    videoLightbox.addEventListener('click', (e) => {
+      if (e.target === videoLightbox) {
+        videoLightbox.style.display = 'none';
+        lightboxPlayer.innerHTML = '';
+        document.body.style.overflow = '';
+      }
+    });
 
-const certContainer = document.getElementById('certContainer');
+    // Portfolio Categories (photo galleries - same as previous)
+    const categoriesData = {
+      "Portraits": { cover: "images/p1.jpg", images: ["images/p2.jpg", "images/p3.jpg", "images/p4.jpg", "images/p5.jpg", "images/p6.jpg", "images/p7.jpg", "images/p8.jpg", "images/p11.jpg", "images/p12.jpg", "images/p13.jpg", "images/p14.jpg", "images/p15.jpg", "images/p16.jpg", "images/p18.jpg", "images/p19.jpg", "images/p20.jpg", "images/p22.jpg", "images/p23.jpg", "images/p24.jpg", "images/p25.jpg", "images/p26.jpg", "images/p27.jpg", "images/p28.jpg", "images/p29.jpg", "images/p30.jpg", "images/p31.jpg", "images/p32.jpg", "images/p33.jpg", "images/p34.jpg", "images/p35.jpg", "images/p36.jpg", "images/p37.jpg", "images/p38.jpg", "images/p39.jpg", "images/p40.jpg", "images/p41.jpg", "images/p42.jpg", "images/p43.jpg"], count: 10 },
+      "Events": { cover: "images/e1.jpg", images: ["images/e2.jpg", "images/e3.jpg", "images/e4.jpg", "images/e5.jpg", "images/e6.jpg", "images/e7.jpg", "images/e8.jpg", "images/e9.jpg", "images/e11.jpg", "images/e13.jpg", "images/e14.jpg", "images/e15.jpg", "images/e17.jpg", "images/e18.jpg", "images/e19.jpg", "images/e20.jpg", "images/e22.jpg", "images/e23.jpg", "images/e24.jpg", "images/e26.jpg", "images/e27.jpg", "images/e28.jpg", "images/e29.jpg", "images/e30.jpg"], count: 4 },
+      "Weddings": { cover: "images/w1.jpg", images: ["images/w2.jpg", "images/w3.jpg", "images/w4.jpg", "images/w5.jpg", "images/w6.jpg", "images/w7.jpg", "images/w8.jpg", "images/w9.jpg", "images/w10.jpg"], count: 4 },
+      "Baby shoot": { cover: "images/o1.jpg", images: ["images/o2.jpg", "images/o30.jpg", "images/o3.jpg", "images/o5.jpg", "images/o6.jpg", "images/o7.jpg", "images/o8.jpg", "images/o9.jpg", "images/o10.jpg", "images/o11.jpg", "images/o13.jpg", "images/o15.jpg", "images/o17.jpg", "images/o18.jpg", "images/o20.jpg", "images/o21.jpg", "images/o22.jpg", "images/o23.jpg", "images/o24.jpg", "images/o25.jpg", "images/o26.jpg", "images/o27.jpg", "images/o28.jpg", "images/o29.jpg"], count: 4 }
+    };
+    const categoryGrid = document.getElementById('categoryGrid');
+    for (const [catName, catData] of Object.entries(categoriesData)) {
+      const card = document.createElement('div'); card.className = 'category-card';
+      card.innerHTML = `<img src="${catData.cover}" alt="${catName}"><div class="category-overlay"><span class="category-name">${catName}</span><span class="photo-count">${catData.count} Photos</span></div><div class="view-more">View Gallery →</div>`;
+      card.addEventListener('click', () => {
+        let galleryHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;">';
+        catData.images.forEach(img => { galleryHtml += `<img src="${img}" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;cursor:pointer;" onclick="window.open('${img}','_blank')">`; });
+        galleryHtml += '</div>';
+        const modalDiv = document.createElement('div'); modalDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:3000;display:flex;align-items:center;justify-content:center;';
+        modalDiv.innerHTML = `<div style="background:#111;padding:20px;border-radius:28px;max-width:90%;max-height:90%;overflow:auto;"><div style="display:flex;justify-content:flex-end;"><button style="background:none;border:none;color:white;font-size:28px;cursor:pointer;">&times;</button></div>${galleryHtml}</div>`;
+        document.body.appendChild(modalDiv); modalDiv.style.display = 'flex'; document.body.style.overflow = 'hidden';
+        modalDiv.querySelector('button').onclick = () => { modalDiv.remove(); document.body.style.overflow = ''; };
+        modalDiv.addEventListener('click', (e) => { if (e.target === modalDiv) { modalDiv.remove(); document.body.style.overflow = ''; } });
+      });
+      categoryGrid.appendChild(card);
+    }
 
-certificatesData.forEach(cert => {
-  const card = document.createElement('div');
-  card.className = 'cert-card';
+    // Projects & Certificates
+    const projectsArray = [
+      { title: "INKLAYER", desc: "Fashion photography and brand shoot" },
+      { title: "Anjaneya School", desc: "Cinematic school promotion video shoot" },
+      { title: "Code Craft Academy", desc: "Creative promotional" }
+    ];
+    projectsArray.forEach(p => { const card = document.createElement('div'); card.className = 'project-card'; card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p>`; projectsContainer.appendChild(card); });
+    const certificatesData = [
+      {
+        image: "images/crtificate1.jpg",
+        title: "35 Awards International Photography Award",
+        year: "2025"
+      },
+      {
+        image: "images/crtificate2.jpg",
+        title: "Global Photography Contest (INNOVIZE)",
+        year: "2025"
+      },
+      {
+        image: "images/crtificate3.jpg",
+        title: "Snap India Photography Contest",
+        year: "2023"
+      }
+    ];
 
-  card.innerHTML = `
+    const certContainer = document.getElementById('certContainer');
+
+    certificatesData.forEach(cert => {
+      const card = document.createElement('div');
+      card.className = 'cert-card';
+
+      card.innerHTML = `
     <img src="${cert.image}" class="cert-img">
     <h3>${cert.title}</h3>
     <p>${cert.year}</p>
   `;
 
-  // click to open full image
-  card.querySelector('img').onclick = () => {
-    window.open(cert.image, '_blank');
-  };
+      // click to open full image
+      card.querySelector('img').onclick = () => {
+        window.open(cert.image, '_blank');
+      };
 
-  certContainer.appendChild(card);
-});
+      certContainer.appendChild(card);
+    });
 
-  // Contact & misc
-  document.getElementById('contactForm').addEventListener('submit', (e) => { e.preventDefault(); alert(✨ Thank you! Ganesh will reach out soon.); e.target.reset(); });
-  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinksEl.classList.remove('active')));
-  const fadeElements = document.querySelectorAll('.fade-up');
-  new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold:0.1 }).observe(document.querySelector('.fade-up'));
-  fadeElements.forEach(el => new IntersectionObserver(([entry]) => { if(entry.isIntersecting) entry.target.classList.add('visible'); }, { threshold:0.1 }).observe(el));
-  document.getElementById('profileImg').onerror = function(){ this.src = "https://randomuser.me/api/portraits/men/32.jpg"; };
-</script>
+    // Contact & misc
+    document.getElementById('contactForm').addEventListener('submit', (e) => { e.preventDefault(); alert(`✨ Thank you! Ganesh will reach out soon.`); e.target.reset(); });
+    const menuToggle = document.getElementById('menuToggle'), navLinksEl = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('active'));
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinksEl.classList.remove('active')));
+    const fadeElements = document.querySelectorAll('.fade-up');
+    new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 }).observe(document.querySelector('.fade-up'));
+    fadeElements.forEach(el => new IntersectionObserver(([entry]) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }, { threshold: 0.1 }).observe(el));
+    document.getElementById('profileImg').onerror = function () { this.src = "https://randomuser.me/api/portraits/men/32.jpg"; };
+  </script>
 </body>
+
 </html>
