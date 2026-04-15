@@ -578,10 +578,11 @@
       border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    .project-card:hover,
-    .cert-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 35px -8px rgba(131, 58, 180, 0.15);
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(131, 58, 180, 0.3);
+      border: 1px solid #833AB4;
+      cursor: pointer;
     }
 
     /* Contact */
@@ -815,11 +816,11 @@
           </div>
         </div>
         <div class="contact-form">
-          <form id="contactForm">
-            <input type="text" placeholder="Your Name" required id="nameField">
-            <input type="email" placeholder="Email Address" required id="emailField">
-            <textarea rows="4" placeholder="Your Message" required id="messageField"></textarea>
-            <button type="submit" class="gradient-btn" style="border:none;">Send Message</button>
+
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit" class="gradient-btn">Send Message</button>
           </form>
         </div>
       </div>
@@ -850,7 +851,7 @@
   <script>
     // ---------- VIDEO DATA (featured + gallery) ----------
     const videosData = [
-      { id: 1, url: "https://drive.google.com/file/d/1nZRc7uXnlQzyhV96Hj-b1y612b8TFdYD/preview", isFeatured: true },
+      { id: 1, url: "https://drive.google.com/file/d/13o_lmYwv-L_HKCWWYDmBZTPp6annBRyn/preview", isFeatured: true },
       { id: 2, url: "https://drive.google.com/file/d/1oYEPvbGU40OaTLqHFySZOeDFOpEAzo58/preview", isFeatured: false },
       { id: 3, url: "https://drive.google.com/file/d/13OkplxXe7XzOOH1iYyPhDzyg5bES6kQm/preview", isFeatured: false },
       { id: 4, url: "https://drive.google.com/file/d/1zJjb061G8P9-cqVt7tF_tWBjQeJGw8OV/preview", isFeatured: false },
@@ -967,12 +968,89 @@
     }
 
     // Projects & Certificates
+    const projectsContainer = document.getElementById('projectsContainer');
+
     const projectsArray = [
-      { title: "INKLAYER", desc: "Fashion photography and brand shoot" },
-      { title: "Anjaneya School", desc: "Cinematic school promotion video shoot" },
-      { title: "Code Craft Academy", desc: "Creative promotional" }
+      {
+        title: "INKLAYER",
+        desc: "Fashion photography and brand shoot",
+        images: ["images/l1.jpg", "images/l2.jpg", "images/l3.jpg", "images/l4.jpg", "images/l5.jpg", "images/l6.jpg", "images/l7.jpg", "images/l8.jpg", "images/l9.jpg", "images/l10.jpg", "images/l11.jpg", "images/l12.jpg", "images/l13.jpg", "images/l14.jpg", "images/l15.jpg", "images/l16.jpg", "images/l17.jpg", "images/l18.jpg", "images/l19.jpg", "images/l20.jpg", "images/l21.jpg", "images/l22.jpg", "images/l23.jpg", "images/l24.jpg", "images/l25.jpg", "images/l26.jpg"],
+        videos: [
+          "https://drive.google.com/file/d/1vIrI6FYa_fHDV0UXk5stCHnHObipo1IE/preview",
+          "https://drive.google.com/file/d/1fxdKKFhMPXfpXvWhRo6N7OteD34UW7eP/preview"
+        ]
+      },
+      {
+        title: "Anjaneya School",
+        desc: "Cinematic school promotion video shoot",
+        videos: [
+          "https://drive.google.com/file/d/14K3dD33jRw4HRLJRmZ0ItXH3skGvFlCh/preview"
+        ]
+      },
+      {
+        title: "Code Craft Academy",
+        desc: "Creative promotional",
+        videos: [
+          "https://drive.google.com/file/d/1YDBnVa6YOgAxFQ6-SVG8twjaJ-f1ibxq/preview",
+          "https://drive.google.com/file/d/1YkA3SAULp8hgKf7s_ppAP6aH6i-zSQfs/preview"
+        ]
+      }
     ];
-    projectsArray.forEach(p => { const card = document.createElement('div'); card.className = 'project-card'; card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p>`; projectsContainer.appendChild(card); });
+
+    function openProjectModal(project) {
+      let content = `<h2 style="color:white">${project.title}</h2>`;
+
+      if (project.images && project.images.length > 0) {
+        project.images.forEach(img => {
+          content += `<img src="${img}" style="width:100%;max-width:300px;margin:10px;border-radius:10px;">`;
+        });
+      }
+
+      if (project.videos && project.videos.length > 0) {
+        project.videos.forEach(video => {
+          content += `
+        <iframe src="${video}" 
+        style="width:100%;max-width:400px;height:220px;margin:10px;border-radius:10px;" 
+        allowfullscreen></iframe>
+      `;
+        });
+      }
+
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:5000;
+  `;
+
+      modal.innerHTML = `
+    <div style="background:#111;padding:20px;border-radius:20px;max-width:90%;max-height:90%;overflow:auto;">
+      <button style="float:right;font-size:25px;background:none;border:none;color:white;cursor:pointer;">×</button>
+      ${content}
+    </div>
+  `;
+
+      document.body.appendChild(modal);
+
+      modal.querySelector('button').onclick = () => modal.remove();
+      modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+    }
+
+    projectsArray.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+
+      card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p>`;
+
+      card.addEventListener('click', () => openProjectModal(p));
+
+      projectsContainer.appendChild(card);
+    });
     const certificatesData = [
       {
         image: "images/crtificate1.jpg",
@@ -1012,7 +1090,6 @@
     });
 
     // Contact & misc
-    document.getElementById('contactForm').addEventListener('submit', (e) => { e.preventDefault(); alert(`✨ Thank you! Ganesh will reach out soon.`); e.target.reset(); });
     const menuToggle = document.getElementById('menuToggle'), navLinksEl = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('active'));
     document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinksEl.classList.remove('active')));
@@ -1020,6 +1097,28 @@
     new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 }).observe(document.querySelector('.fade-up'));
     fadeElements.forEach(el => new IntersectionObserver(([entry]) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }, { threshold: 0.1 }).observe(el));
     document.getElementById('profileImg').onerror = function () { this.src = "https://randomuser.me/api/portraits/men/32.jpg"; };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init("_n65NeCRTdiW4m1jv");
+    })();
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_aw0fmbe", "template_7sn3oio", this)
+        .then(() => {
+          alert("🔥 Message sent successfully!");
+        })
+        .catch((error) => {
+          alert("❌ Error sending message");
+          console.log(error);
+        });
+
+      this.reset();
+    });
   </script>
 </body>
 
