@@ -560,7 +560,150 @@
       color: white;
       cursor: pointer;
     }
+/* Posters & Graphic Designs Gallery */
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: 100%;
+      margin: 0 auto;
+      transition: all 0.4s ease;
+    }
 
+    /* Initially display only ONE poster, perfectly centered horizontally */
+    .poster-grid:not(.expanded) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .poster-grid:not(.expanded) .poster-card {
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .poster-grid:not(.expanded) .poster-hidden {
+      display: none !important;
+    }
+
+    /* Expanded responsive gallery */
+    .poster-grid.expanded {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .poster-grid.expanded .poster-card {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .poster-grid.expanded .poster-hidden {
+      display: flex !important;
+      animation: posterCardFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes posterCardFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .poster-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1), box-shadow 0.35s ease, border-color 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .poster-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(131, 58, 180, 0.18);
+      border-color: rgba(131, 58, 180, 0.3);
+    }
+
+    .poster-img-wrap {
+      width: 100%;
+      background: #f7f7f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .poster-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .poster-info {
+      padding: 16px 20px;
+      background: #ffffff;
+      margin-top: auto;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      text-align: center;
+    }
+
+    .poster-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #121212;
+      margin: 0;
+      line-height: 1.4;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .poster-more {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    @media (max-width: 950px) {
+      .poster-grid.expanded {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .poster-grid.expanded {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .poster-grid:not(.expanded) .poster-card {
+        max-width: 100%;
+      }
+
+      .poster-info {
+        padding: 12px 10px;
+      }
+
+      .poster-card h3 {
+        font-size: 0.88rem;
+      }
+    }
     .projects-grid,
     .cert-grid {
       display: grid;
@@ -714,6 +857,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#video">Visual Stories</a></li>
+        <li><a href="#posters">Posters</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certificates">Achievements</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -771,12 +915,66 @@
             <source src="images/cover.mp4" type="video/mp4">
           </video>
         </div>
-        </video>
+      </div>
+      <div class="more-videos-btn">
+        <button class="gradient-btn" id="viewMoreVideosBtn"><i class="fas fa-film"></i> View More Videos</button>
       </div>
     </div>
-    <div class="more-videos-btn">
-      <button class="gradient-btn" id="viewMoreVideosBtn"><i class="fas fa-film"></i> View More Videos</button>
-    </div>
+  </section>
+
+  <!-- Posters Section -->
+  <section id="posters" class="fade-up">
+    <div class="container">
+      <div class="section-title-center">
+        <h2>Posters & Graphic Designs</h2>
+        <p style="margin-top:8px; color:#555;">Creative designs and visual storytelling</p>
+      </div>
+
+      <div class="poster-grid" id="posterGrid">
+        <!-- First poster: Always visible & perfectly centered initially -->
+        <div class="poster-card" onclick="window.open('images/poster1.jpg', '_blank')" title="Click to view full poster">
+          <div class="poster-img-wrap">
+            <img src="images/poster1.jpg" alt="Kannada Rajyotsava Poster" loading="lazy">
+          </div>
+          <div class="poster-info">
+            <h3>Kannada Rajyotsava Poster</h3>
+          </div>
+        </div>
+
+        <!-- Remaining posters: Hidden initially -->
+        <div class="poster-card poster-hidden" onclick="window.open('images/poster2.jpeg', '_blank')" title="Click to view full poster">
+          <div class="poster-img-wrap">
+            <img src="images/poster2.jpeg" alt="Project Posters" loading="lazy">
+          </div>
+          <div class="poster-info">
+            <h3>Project Posters</h3>
+          </div>
+        </div>
+
+        <div class="poster-card poster-hidden" onclick="window.open('images/poster3.jpg', '_blank')" title="Click to view full poster">
+          <div class="poster-img-wrap">
+            <img src="images/poster3.jpg" alt="Project Promotions" loading="lazy">
+          </div>
+          <div class="poster-info">
+            <h3>Project Promotions</h3>
+          </div>
+        </div>
+
+        <div class="poster-card poster-hidden" onclick="window.open('images/poster4.png', '_blank')" title="Click to view full poster">
+          <div class="poster-img-wrap">
+            <img src="images/poster4.png" alt="Project Promotions" loading="lazy">
+          </div>
+          <div class="poster-info">
+            <h3>Project Promotions</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="poster-more">
+        <button class="gradient-btn" id="viewAllPosters" aria-expanded="false" aria-controls="posterGrid">
+          See More Posters <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -816,11 +1014,11 @@
           </div>
         </div>
         <div class="contact-form">
-
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-          <button type="submit" class="gradient-btn">Send Message</button>
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit" class="gradient-btn" id="contactSubmitBtn">Send Message</button>
           </form>
         </div>
       </div>
@@ -856,18 +1054,19 @@
       { id: 3, url: "https://drive.google.com/file/d/13OkplxXe7XzOOH1iYyPhDzyg5bES6kQm/preview", isFeatured: false },
       { id: 4, url: "https://drive.google.com/file/d/1zJjb061G8P9-cqVt7tF_tWBjQeJGw8OV/preview", isFeatured: false },
       { id: 5, url: "https://drive.google.com/file/d/1KOkXuZtIZ7pVmnnohvj-f8nRduEsF10s/preview", isFeatured: false },
-      { id: 5, url: "https://drive.google.com/file/d/1sq8DBpFd_XV_-3u_aqVJd-FynX0O65_O/preview", isFeatured: false },
-      { id: 5, url: "https://drive.google.com/file/d/1nnwjPoOJa4Gytw7pmOy1jp0U9yQtmwqj/preview", isFeatured: false },
-      { id: 5, url: "https://drive.google.com/file/d/1onZSITWfhhLDrvk4Ws5L2ePMM_A0ubOm/preview", isFeatured: false }
+      { id: 6, url: "https://drive.google.com/file/d/1sq8DBpFd_XV_-3u_aqVJd-FynX0O65_O/preview", isFeatured: false },
+      { id: 7, url: "https://drive.google.com/file/d/1nnwjPoOJa4Gytw7pmOy1jp0U9yQtmwqj/preview", isFeatured: false },
+      { id: 8, url: "https://drive.google.com/file/d/1onZSITWfhhLDrvk4Ws5L2ePMM_A0ubOm/preview", isFeatured: false }
     ];
 
     const featuredVideo = videosData.find(v => v.isFeatured === true) || videosData[0];
-    const otherVideos = videosData.filter(v => v.id !== featuredVideo.id);
+    const otherVideos = videosData.filter(v => v.url !== featuredVideo.url);
 
     // Render gallery modal content
     const videoGalleryGrid = document.getElementById('videoGalleryGrid');
 
     function renderVideoGallery() {
+      if (!videoGalleryGrid) return;
       videoGalleryGrid.innerHTML = '';
 
       otherVideos.forEach(video => {
@@ -875,14 +1074,16 @@
         item.className = 'video-gallery-item';
 
         item.innerHTML = `
-      <div class="video-thumb">
-        <iframe 
-  src="${video.url}" 
-  style="width:100%; height:100%; border:none;">
-</iframe>
-        <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
-      </div>
-    `;
+          <div class="video-thumb">
+            <iframe 
+              src="${video.url}" 
+              style="width:100%; height:100%; border:none;"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+            <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+          </div>
+        `;
 
         item.addEventListener('click', () => openVideoLightbox(video.url));
         videoGalleryGrid.appendChild(item);
@@ -895,22 +1096,28 @@
     const viewMoreBtn = document.getElementById('viewMoreVideosBtn');
     const closeVideoModalBtn = document.getElementById('closeVideoModalBtn');
 
-    viewMoreBtn.addEventListener('click', () => {
-      videoModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    });
+    if (viewMoreBtn && videoModal) {
+      viewMoreBtn.addEventListener('click', () => {
+        videoModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    }
 
-    closeVideoModalBtn.addEventListener('click', () => {
-      videoModal.style.display = 'none';
-      document.body.style.overflow = '';
-    });
-
-    videoModal.addEventListener('click', (e) => {
-      if (e.target === videoModal) {
+    if (closeVideoModalBtn && videoModal) {
+      closeVideoModalBtn.addEventListener('click', () => {
         videoModal.style.display = 'none';
         document.body.style.overflow = '';
-      }
-    });
+      });
+    }
+
+    if (videoModal) {
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+          videoModal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    }
 
     // Video Lightbox
     const videoLightbox = document.getElementById('videoLightbox');
@@ -918,53 +1125,68 @@
     const closeLightboxBtn = document.getElementById('closeLightboxBtn');
 
     function openVideoLightbox(videoUrl) {
+      if (!videoLightbox || !lightboxPlayer) return;
       lightboxPlayer.innerHTML = `
-    <iframe 
-  src="${videoUrl}" 
-  style="width:100%; aspect-ratio:16/9; border-radius:20px;" 
-  allow="autoplay">
-</iframe>
-  `;
+        <iframe 
+          src="${videoUrl}" 
+          style="width:100%; aspect-ratio:16/9; border-radius:20px; border:none;" 
+          allow="autoplay; fullscreen"
+          allowfullscreen>
+        </iframe>
+      `;
       videoLightbox.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
 
-    closeLightboxBtn.addEventListener('click', () => {
-      videoLightbox.style.display = 'none';
-      lightboxPlayer.innerHTML = '';
-      document.body.style.overflow = '';
-    });
-
-    videoLightbox.addEventListener('click', (e) => {
-      if (e.target === videoLightbox) {
+    if (closeLightboxBtn && videoLightbox && lightboxPlayer) {
+      closeLightboxBtn.addEventListener('click', () => {
         videoLightbox.style.display = 'none';
         lightboxPlayer.innerHTML = '';
         document.body.style.overflow = '';
-      }
-    });
+      });
+    }
 
-    // Portfolio Categories (photo galleries - same as previous)
+    if (videoLightbox && lightboxPlayer) {
+      videoLightbox.addEventListener('click', (e) => {
+        if (e.target === videoLightbox) {
+          videoLightbox.style.display = 'none';
+          lightboxPlayer.innerHTML = '';
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Portfolio Categories (photo galleries)
     const categoriesData = {
       "Portraits": { cover: "images/p1.jpg", images: ["images/p2.jpg", "images/p3.jpg", "images/p4.jpg", "images/p5.jpg", "images/p6.jpg", "images/p7.jpg", "images/p8.jpg", "images/p11.jpg", "images/p12.jpg", "images/p13.jpg", "images/p14.jpg", "images/p15.jpg", "images/p16.jpg", "images/p18.jpg", "images/p19.jpg", "images/p20.jpg", "images/p22.jpg", "images/p23.jpg", "images/p24.jpg", "images/p25.jpg", "images/p26.jpg", "images/p27.jpg", "images/p28.jpg", "images/p29.jpg", "images/p30.jpg", "images/p31.jpg", "images/p32.jpg", "images/p33.jpg", "images/p34.jpg", "images/p35.jpg", "images/p36.jpg", "images/p37.jpg", "images/p38.jpg", "images/p39.jpg", "images/p40.jpg", "images/p41.jpg", "images/p42.jpg", "images/p43.jpg"], count: 10 },
-      "Events": { cover: "images/e1.jpg", images: ["images/e2.jpg", "images/e3.jpg", "images/e4.jpg", "images/e5.jpg", "images/e6.jpg", "images/e7.jpg", "images/e8.jpg", "images/e9.jpg", "images/e11.jpg", "images/e13.jpg", "images/e14.jpg", "images/e15.jpg", "images/e17.jpg", "images/e18.jpg", "images/e19.jpg", "images/e20.jpg", "images/e22.jpg", "images/e23.jpg", "images/e24.jpg", "images/e26.jpg", "images/e27.jpg", "images/e28.jpg", "images/e29.jpg", "images/e30.jpg"], count: 4 },
+      "Events": { cover: "images/e1.jpg", images: ["images/e2.jpg", "images/e3.jpg", "images/e4.jpg", "images/e5.jpg", "images/e6.jpg", "images/e7.jpg", "images/e8.jpg", "images/e9.jpg", "images/e13.jpg", "images/e14.jpg", "images/e15.jpg", "images/e17.jpg", "images/e18.jpg", "images/e19.jpg", "images/e20.jpg", "images/e22.jpg", "images/e23.jpg", "images/e24.jpg", "images/e26.jpg", "images/e27.jpg", "images/e28.jpg", "images/e29.jpg", "images/e30.jpg"], count: 4 },
       "Weddings": { cover: "images/w1.jpg", images: ["images/w2.jpg", "images/w3.jpg", "images/w4.jpg", "images/w5.jpg", "images/w6.jpg", "images/w7.jpg", "images/w8.jpg", "images/w9.jpg", "images/w10.jpg"], count: 4 },
       "Baby shoot": { cover: "images/o1.jpg", images: ["images/o2.jpg", "images/o30.jpg", "images/o3.jpg", "images/o5.jpg", "images/o6.jpg", "images/o7.jpg", "images/o8.jpg", "images/o9.jpg", "images/o10.jpg", "images/o11.jpg", "images/o13.jpg", "images/o15.jpg", "images/o17.jpg", "images/o18.jpg", "images/o20.jpg", "images/o21.jpg", "images/o22.jpg", "images/o23.jpg", "images/o24.jpg", "images/o25.jpg", "images/o26.jpg", "images/o27.jpg", "images/o28.jpg", "images/o29.jpg"], count: 4 }
     };
+
     const categoryGrid = document.getElementById('categoryGrid');
-    for (const [catName, catData] of Object.entries(categoriesData)) {
-      const card = document.createElement('div'); card.className = 'category-card';
-      card.innerHTML = `<img src="${catData.cover}" alt="${catName}"><div class="category-overlay"><span class="category-name">${catName}</span><span class="photo-count">${catData.count} Photos</span></div><div class="view-more">View Gallery →</div>`;
-      card.addEventListener('click', () => {
-        let galleryHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;">';
-        catData.images.forEach(img => { galleryHtml += `<img src="${img}" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;cursor:pointer;" onclick="window.open('${img}','_blank')">`; });
-        galleryHtml += '</div>';
-        const modalDiv = document.createElement('div'); modalDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:3000;display:flex;align-items:center;justify-content:center;';
-        modalDiv.innerHTML = `<div style="background:#111;padding:20px;border-radius:28px;max-width:90%;max-height:90%;overflow:auto;"><div style="display:flex;justify-content:flex-end;"><button style="background:none;border:none;color:white;font-size:28px;cursor:pointer;">&times;</button></div>${galleryHtml}</div>`;
-        document.body.appendChild(modalDiv); modalDiv.style.display = 'flex'; document.body.style.overflow = 'hidden';
-        modalDiv.querySelector('button').onclick = () => { modalDiv.remove(); document.body.style.overflow = ''; };
-        modalDiv.addEventListener('click', (e) => { if (e.target === modalDiv) { modalDiv.remove(); document.body.style.overflow = ''; } });
-      });
-      categoryGrid.appendChild(card);
+    if (categoryGrid) {
+      for (const [catName, catData] of Object.entries(categoriesData)) {
+        const card = document.createElement('div');
+        card.className = 'category-card';
+        card.innerHTML = `<img src="${catData.cover}" alt="${catName}" loading="lazy"><div class="category-overlay"><span class="category-name">${catName}</span><span class="photo-count">${catData.count} Photos</span></div><div class="view-more">View Gallery →</div>`;
+        card.addEventListener('click', () => {
+          let galleryHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;">';
+          catData.images.forEach(img => {
+            galleryHtml += `<img src="${img}" alt="${catName}" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;cursor:pointer;" onclick="window.open('${img}','_blank')">`;
+          });
+          galleryHtml += '</div>';
+          const modalDiv = document.createElement('div');
+          modalDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:3000;display:flex;align-items:center;justify-content:center;';
+          modalDiv.innerHTML = `<div style="background:#111;padding:20px;border-radius:28px;max-width:90%;max-height:90%;overflow:auto;"><div style="display:flex;justify-content:flex-end;"><button style="background:none;border:none;color:white;font-size:28px;cursor:pointer;">&times;</button></div>${galleryHtml}</div>`;
+          document.body.appendChild(modalDiv);
+          modalDiv.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          modalDiv.querySelector('button').onclick = () => { modalDiv.remove(); document.body.style.overflow = ''; };
+          modalDiv.addEventListener('click', (e) => { if (e.target === modalDiv) { modalDiv.remove(); document.body.style.overflow = ''; } });
+        });
+        categoryGrid.appendChild(card);
+      }
     }
 
     // Projects & Certificates
@@ -974,7 +1196,7 @@
       {
         title: "INKLAYER",
         desc: "Fashion photography and brand shoot",
-        images: ["images/l1.jpg", "images/l2.jpg", "images/l3.jpg", "images/l4.jpg", "images/l5.jpg", "images/l6.jpg", "images/l7.jpg", "images/l8.jpg", "images/l9.jpg", "images/l10.jpg", "images/l11.jpg", "images/l12.jpg", "images/l13.jpg", "images/l14.jpg", "images/l15.jpg", "images/l16.jpg", "images/l17.jpg", "images/l18.jpg", "images/l19.jpg", "images/l20.jpg", "images/l21.jpg", "images/l22.jpg", "images/l23.jpg", "images/l24.jpg", "images/l25.jpg", "images/l26.jpg"],
+        images: ["images/l1.jpg", "images/l2.jpg", "images/l3.jpg", "images/l4.jpg", "images/l5.jpg", "images/l6.jpg", "images/l7.jpg", "images/l8.jpg", "images/l9.jpg", "images/l10.jpg", "images/l11.jpg", "images/l12.jpg", "images/l13.jpg", "images/l14.jpg", "images/l15.jpg", "images/l17.jpg", "images/l18.jpg", "images/l20.jpg", "images/l21.jpg", "images/l22.jpg", "images/l23.jpg", "images/l24.jpg", "images/l25.jpg", "images/l26.jpg"],
         videos: [
           "https://drive.google.com/file/d/1vIrI6FYa_fHDV0UXk5stCHnHObipo1IE/preview",
           "https://drive.google.com/file/d/1fxdKKFhMPXfpXvWhRo6N7OteD34UW7eP/preview"
@@ -998,59 +1220,73 @@
     ];
 
     function openProjectModal(project) {
-      let content = `<h2 style="color:white">${project.title}</h2>`;
+      let content = `<h2 style="color:white; margin-bottom:15px;">${project.title}</h2>`;
 
       if (project.images && project.images.length > 0) {
+        content += '<div style="display:flex; flex-wrap:wrap; justify-content:center;">';
         project.images.forEach(img => {
-          content += `<img src="${img}" style="width:100%;max-width:300px;margin:10px;border-radius:10px;">`;
+          content += `<img src="${img}" alt="${project.title}" style="width:100%;max-width:300px;margin:10px;border-radius:10px;cursor:pointer;" onclick="window.open('${img}','_blank')">`;
         });
+        content += '</div>';
       }
 
       if (project.videos && project.videos.length > 0) {
+        content += '<div style="display:flex; flex-wrap:wrap; justify-content:center;">';
         project.videos.forEach(video => {
           content += `
-        <iframe src="${video}" 
-        style="width:100%;max-width:400px;height:220px;margin:10px;border-radius:10px;" 
-        allowfullscreen></iframe>
-      `;
+            <iframe src="${video}" 
+              style="width:100%;max-width:400px;height:220px;margin:10px;border-radius:10px;border:none;" 
+              allowfullscreen>
+            </iframe>
+          `;
         });
+        content += '</div>';
       }
 
       const modal = document.createElement('div');
       modal.style.cssText = `
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:rgba(0,0,0,0.9);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:5000;
-  `;
+        position:fixed;
+        top:0;left:0;
+        width:100%;height:100%;
+        background:rgba(0,0,0,0.9);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:5000;
+      `;
 
       modal.innerHTML = `
-    <div style="background:#111;padding:20px;border-radius:20px;max-width:90%;max-height:90%;overflow:auto;">
-      <button style="float:right;font-size:25px;background:none;border:none;color:white;cursor:pointer;">×</button>
-      ${content}
-    </div>
-  `;
+        <div style="background:#111;padding:24px;border-radius:20px;max-width:90%;max-height:90%;overflow:auto;">
+          <button style="float:right;font-size:25px;background:none;border:none;color:white;cursor:pointer;">×</button>
+          ${content}
+        </div>
+      `;
 
       document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
 
-      modal.querySelector('button').onclick = () => modal.remove();
-      modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+      modal.querySelector('button').onclick = () => {
+        modal.remove();
+        document.body.style.overflow = '';
+      };
+      modal.onclick = (e) => {
+        if (e.target === modal) {
+          modal.remove();
+          document.body.style.overflow = '';
+        }
+      };
     }
 
-    projectsArray.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'project-card';
+    if (projectsContainer) {
+      projectsArray.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p>`;
+        card.addEventListener('click', () => openProjectModal(p));
+        projectsContainer.appendChild(card);
+      });
+    }
 
-      card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p>`;
-
-      card.addEventListener('click', () => openProjectModal(p));
-
-      projectsContainer.appendChild(card);
-    });
     const certificatesData = [
       {
         image: "images/crtificate1.jpg",
@@ -1070,55 +1306,146 @@
     ];
 
     const certContainer = document.getElementById('certContainer');
+    if (certContainer) {
+      certificatesData.forEach(cert => {
+        const card = document.createElement('div');
+        card.className = 'cert-card';
 
-    certificatesData.forEach(cert => {
-      const card = document.createElement('div');
-      card.className = 'cert-card';
+        card.innerHTML = `
+          <img src="${cert.image}" class="cert-img" alt="${cert.title}" loading="lazy">
+          <h3>${cert.title}</h3>
+          <p>${cert.year}</p>
+        `;
 
-      card.innerHTML = `
-    <img src="${cert.image}" class="cert-img">
-    <h3>${cert.title}</h3>
-    <p>${cert.year}</p>
-  `;
+        const imgEl = card.querySelector('img');
+        if (imgEl) {
+          imgEl.style.cursor = 'pointer';
+          imgEl.onclick = () => {
+            window.open(cert.image, '_blank');
+          };
+        }
 
-      // click to open full image
-      card.querySelector('img').onclick = () => {
-        window.open(cert.image, '_blank');
-      };
+        certContainer.appendChild(card);
+      });
+    }
 
-      certContainer.appendChild(card);
+    // Navigation Toggle & Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinksEl = document.getElementById('navLinks');
+
+    if (menuToggle && navLinksEl) {
+      menuToggle.addEventListener('click', () => {
+        navLinksEl.classList.toggle('active');
+      });
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinksEl) {
+          navLinksEl.classList.remove('active');
+        }
+      });
     });
 
-    // Contact & misc
-    const menuToggle = document.getElementById('menuToggle'), navLinksEl = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('active'));
-    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinksEl.classList.remove('active')));
+    // Fade-in On Scroll
     const fadeElements = document.querySelectorAll('.fade-up');
-    new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 }).observe(document.querySelector('.fade-up'));
-    fadeElements.forEach(el => new IntersectionObserver(([entry]) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }, { threshold: 0.1 }).observe(el));
-    document.getElementById('profileImg').onerror = function () { this.src = "https://randomuser.me/api/portraits/men/32.jpg"; };
+    if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeElements.forEach(el => fadeObserver.observe(el));
+    } else {
+      fadeElements.forEach(el => el.classList.add('visible'));
+    }
+
+    // Profile Image Error Handling
+    const profileImg = document.getElementById('profileImg');
+    if (profileImg) {
+      profileImg.onerror = function () {
+        this.onerror = null;
+        this.src = "https://randomuser.me/api/portraits/men/32.jpg";
+      };
+    }
+
+    // Poster Gallery: Single Centered Initially, Expand to 3x Desktop / 2x Mobile, Collapse back smoothly
+    const viewAllPosters = document.getElementById("viewAllPosters");
+    const posterGrid = document.getElementById("posterGrid");
+
+    if (viewAllPosters && posterGrid) {
+      viewAllPosters.addEventListener("click", function () {
+        const isExpanded = posterGrid.classList.toggle("expanded");
+
+        if (isExpanded) {
+          this.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
+          this.setAttribute('aria-expanded', 'true');
+        } else {
+          this.innerHTML = 'See More Posters <i class="fas fa-arrow-right"></i>';
+          this.setAttribute('aria-expanded', 'false');
+
+          // Smoothly scroll back to the poster section header
+          const posterSection = document.getElementById("posters");
+          if (posterSection) {
+            posterSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      });
+    }
   </script>
+
+  <!-- EmailJS Library -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <script>
     (function () {
-      emailjs.init("_n65NeCRTdiW4m1jv");
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init("_n65NeCRTdiW4m1jv");
+      }
     })();
 
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-      emailjs.sendForm("service_aw0fmbe", "template_7sn3oio", this)
-        .then(() => {
-          alert("🔥 Message sent successfully!");
-        })
-        .catch((error) => {
-          alert("❌ Error sending message");
-          console.log(error);
-        });
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerHTML : 'Send Message';
 
-      this.reset();
-    });
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        }
+
+        if (typeof emailjs !== 'undefined') {
+          emailjs.sendForm("service_aw0fmbe", "template_7sn3oio", this)
+            .then(() => {
+              alert("🔥 Message sent successfully!");
+              contactForm.reset();
+            })
+            .catch((error) => {
+              alert("❌ Error sending message. Please try again or reach out directly.");
+              console.error("EmailJS Error:", error);
+            })
+            .finally(() => {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+              }
+            });
+        } else {
+          console.error("EmailJS library not loaded");
+          alert("❌ Email service temporarily unavailable. Please email directly to ganeshbhovi2312@gmail.com.");
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        }
+      });
+    }
   </script>
 </body>
 
